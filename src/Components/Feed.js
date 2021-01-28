@@ -7,10 +7,20 @@ import { CalendarViewDay, Event, Subscriptions } from "@material-ui/icons";
 import Post from "./Post";
 
 function Feed() {
+  const [posts, setPosts] = useState([]);
   const [text, setText] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    setPosts([
+        ...posts, post{
+        
+        }
+    ])
+ 
+
+    setText("");
   };
 
   return (
@@ -36,6 +46,9 @@ function Feed() {
           />
         </div>
       </div>
+      {posts.map((post) => (
+        <Post />
+      ))}
       <Post
         name="Robert Gregg"
         description="This is a test Description"
