@@ -4,6 +4,7 @@ import ImageIcon from "@material-ui/icons/Image";
 import "../css/Feed.css";
 import InputOption from "./InputOption";
 import { CalendarViewDay, Event, Subscriptions } from "@material-ui/icons";
+import Post from "./Post";
 
 function Feed() {
   const [text, setText] = useState("");
@@ -35,6 +36,11 @@ function Feed() {
           />
         </div>
       </div>
+      <Post
+        name="Robert Gregg"
+        description="This is a test Description"
+        message="This is a test message"
+      />
     </div>
   );
 }
