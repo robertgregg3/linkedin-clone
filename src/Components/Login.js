@@ -13,6 +13,19 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
+    // when you sign in you get a userAth object that we want to pass into the redux store
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((userAuth) => {
+        dispatch(
+          login({
+            email: userAuth.user.email,
+            uid: userAuth.user.uid,
+            displayName: userAuth.user.name,
+          })
+        );
+      })
+      .catch((error) => alert(error));
   };
 
   const handleRegister = () => {
