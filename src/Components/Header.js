@@ -11,14 +11,16 @@ import {
   ExploreOutlined,
   Notifications,
 } from "@material-ui/icons";
-import Rob from "../images/rob.jpg";
 import "../css/Header.css";
-import { logout } from "../features/userSlice";
+import { logout, selectUser } from "../features/userSlice";
 import { auth } from "../firebase";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 function Header() {
+  const user = useSelector(selectUser);
   const dispatch = useDispatch();
+
   const handleLogout = () => {
     dispatch(logout()); // tell redux that you are logged out
     auth.signOut(); // log out from firebase
@@ -40,7 +42,7 @@ function Header() {
           <HeaderOption title="Jobs" Icon={BusinessCenter} />
           <HeaderOption title="Messaging" Icon={Chat} />
           <HeaderOption title="Jobs" Icon={Notifications} />
-          <HeaderOption title="Me" avatar={Rob} onClick={handleLogout} />
+          <HeaderOption title="Logout" avatar={true} onClick={handleLogout} />
         </div>
         <div className="header__farRight">
           <HeaderOption title="Work" Icon={AppsIcon} />

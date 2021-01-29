@@ -1,19 +1,23 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { Avatar } from "@material-ui/core";
 import "../css/Post.css";
 import InputOption from "./InputOption";
+import { useSelector } from "react-redux";
 import {
   ChatOutlined,
   SendOutlined,
   ShareOutlined,
   ThumbUpAltOutlined,
 } from "@material-ui/icons";
+import { selectUser } from "../features/userSlice";
 
-function Post({ name, description, message, photoUrl }) {
+const Post = forwardRef(({ name, description, message }, ref) => {
+  const user = useSelector(selectUser);
+
   return (
-    <div className="post">
+    <div ref={ref} className="post">
       <div className="post__header">
-        <Avatar />
+        <Avatar>{user.displayName[0].toUpperCase()}</Avatar>
         <div className="post__info">
           <h2>{name}</h2>
           <p>{description}</p>
@@ -30,6 +34,6 @@ function Post({ name, description, message, photoUrl }) {
       </div>
     </div>
   );
-}
+});
 
 export default Post;
