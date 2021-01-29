@@ -3,22 +3,23 @@
   width: 100%;
   display: grid;
   place-items: center;
+  margin: 70px;
 }
 
 .login > img {
   height: 40px;
   object-fit: contain;
-  margin: 50px auto -15px 0;
+  margin: 50px auto -15px -20px;
   padding-left: 50px;
 }
 
 .login__container {
   display: grid;
   margin: 30px auto;
-  padding: 50px;
+  padding: 70px;
   background-color: #fff;
   border-radius: 15px;
-  box-shadow: 1px 5px 7px -5px rgb(0, 0, 0, 0.5);
+  box-shadow: 1px 5px 7px -5px rgb(0 0 0 / 50%);
 }
 
 .login__container > h2 {
