@@ -53,8 +53,6 @@ function Login() {
           });
       })
       .catch((error) => alert(error));
-
-    window.location.reload();
   };
 
   return (

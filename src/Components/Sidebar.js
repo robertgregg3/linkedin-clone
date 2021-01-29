@@ -20,7 +20,7 @@ function Sidebar() {
       <div className="sidebar__top">
         <img src={Bg} alt="" />
         <Avatar className="sidebar__avatar">
-          {user.displayName[0].toUpperCase()}
+          {user.email[0].toUpperCase()}
         </Avatar>
         <h2>{user.displayName}</h2>
         <h4>{user.email}</h4>
