@@ -11,6 +11,7 @@ import {
   ExploreOutlined,
   Notifications,
 } from "@material-ui/icons";
+import Rob from "../images/rob.jpg";
 import "../css/Header.css";
 
 function Header() {
@@ -21,7 +22,7 @@ function Header() {
           <img src={LinkedIn} alt="" />
           <div className="header__search">
             <SearchIcon />
-            <input type="text" />
+            <input type="text" placeholder="Search..." />
           </div>
         </div>
         <div className="header__right">
@@ -30,10 +31,7 @@ function Header() {
           <HeaderOption title="Jobs" Icon={BusinessCenter} />
           <HeaderOption title="Messaging" Icon={Chat} />
           <HeaderOption title="Jobs" Icon={Notifications} />
-          <HeaderOption
-            title="Me"
-            avatar="https://compassionate-leakey-e9b16b.netlify.app/images/IG_Sonny.jpeg"
-          />
+          <HeaderOption title="Me" avatar={Rob} />
         </div>
         <div className="header__farRight">
           <HeaderOption title="Work" Icon={AppsIcon} />

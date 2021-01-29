@@ -6,7 +6,6 @@ import {
   ChatOutlined,
   SendOutlined,
   ShareOutlined,
-  ThumbDownAltOutlined,
   ThumbUpAltOutlined,
 } from "@material-ui/icons";
 
