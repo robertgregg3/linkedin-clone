@@ -13,8 +13,17 @@ import {
 } from "@material-ui/icons";
 import Rob from "../images/rob.jpg";
 import "../css/Header.css";
+import { logout } from "../features/userSlice";
+import { auth } from "../firebase";
+import { useDispatch } from "react-redux";
 
 function Header() {
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch(logout()); // tell redux that you are logged out
+    auth.signOut(); // log out from firebase
+  };
+
   return (
     <div className="header">
       <div className="header__container">
@@ -31,7 +40,7 @@ function Header() {
           <HeaderOption title="Jobs" Icon={BusinessCenter} />
           <HeaderOption title="Messaging" Icon={Chat} />
           <HeaderOption title="Jobs" Icon={Notifications} />
-          <HeaderOption title="Me" avatar={Rob} />
+          <HeaderOption title="Me" avatar={Rob} onClick={handleLogout} />
         </div>
         <div className="header__farRight">
           <HeaderOption title="Work" Icon={AppsIcon} />
