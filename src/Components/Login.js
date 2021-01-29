@@ -53,6 +53,8 @@ function Login() {
           });
       })
       .catch((error) => alert(error));
+
+    window.location("/");
   };
 
   return (
@@ -63,7 +65,7 @@ function Login() {
         <small>
           This is just for demo purposes so your name can be anything and your
           email can be whatever you like but still in email format
-          (tets@test.com). First time here fill out the details and press the
+          (test@test.com). First time here fill out the details and press the
           "register" at the bottom.
         </small>
         <form>
